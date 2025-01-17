@@ -10,7 +10,7 @@ public class UserServiceClient {
 				new GenericXmlApplicationContext("applicationContext.xml");
 		
 		// 2. Spring 컨테이너로부터 UserServiceImpl 객체를 Lookup
-		UserService userService = (UserService)container.getBean("UserService");
+		UserService userService = (UserService)container.getBean("userService");
 		
 		// 3. 로그인 기능 테스트
 		UserVO vo = new UserVO();

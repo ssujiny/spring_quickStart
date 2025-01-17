@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import com.springbook.biz.user.UserService;
 import com.springbook.biz.user.UserVO;
 
-@Service("UserService")
+@Service("userService")
 public class UserServiceImpl implements UserService{
 	@Autowired
 	private UserDAO userDAO;
