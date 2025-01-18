@@ -13,7 +13,7 @@ import com.springbook.biz.board.BoardVO;
 public class BoardServiceImpl implements BoardService {
 	
 	@Autowired
-	private BoardDAO boardDAO;
+	private BoardDAOSpring boardDAO;
 	
 	//글 등록
 	public void insertBoard(BoardVO vo) {
@@ -24,7 +24,10 @@ public class BoardServiceImpl implements BoardService {
 		}
 		*/
 		
-		boardDAO.insertBoard(vo);
+		boardDAO.insertBoard(vo); // 100번 글 등록 성공
+		boardDAO.insertBoard(vo); // Exception 발생
+		
+		// Transaction은 메소드 단위로 관리되므로 예외 발생시 insertBoard 메소드 작업결과는 모두 Rollback 처리된다.
 	}
 	
 	//글 수정
